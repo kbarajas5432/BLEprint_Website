@@ -126,7 +126,3 @@ Edit the CSS variables in `styles.css`:
 ## License
 
 © 2025 BLEprint. All rights reserved.
-
-## Contact
-
-For questions or support, contact us at contact@bleprint.com
