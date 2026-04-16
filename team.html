@@ -4,119 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team BLEprint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Navigation -->
+<body class="page page-team">
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">BLEprint</div>
+            <a href="index.html" class="logo">BLEprint</a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="team.html">Team</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Team Hero Section -->
-    <section class="team-hero">
-        <div class="container">
-            <h1 class="team-hero-title">Meet Our Team</h1>
-            <p class="team-hero-subtitle">The cofounders building BLEprint's vision for safer and smarter construction sites</p>
-        </div>
-    </section>
-
-    <!-- Team Members Section -->
-    <section class="team-section">
-        <div class="container">
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="team-image">
-                        <img src="Images/BLEprint_Bray.jpg" alt="Brayan Aispuro">
-                    </div>
-                    <div class="team-info">
-                        <h3>Brayan Aispuro</h3>
-                        <p class="team-role">Cofounder</p>
-                        <p class="team-description">Senior Electrical Engineering Undergraduate at UC San Diego</p>
-                    </div>
+    <main>
+        <section class="page-hero">
+            <div class="container page-hero-grid">
+                <div class="page-hero-copy" data-reveal>
+                    <p class="eyebrow">The team</p>
+                    <h1 class="page-hero-title">Cofounders building a sharper field view for construction teams.</h1>
+                    <p class="page-hero-subtitle">
+                        BLEprint brings together software, electrical engineering, robotics, and systems thinking around a shared mission to reduce uncertainty behind the wall.
+                    </p>
                 </div>
-
-                <div class="team-member">
-                    <div class="team-image">
-                        <img src="Images/BLEprint_Karim.jpg" alt="Karim Barajas">
-                    </div>
-                    <div class="team-info">
-                        <h3>Karim Barajas</h3>
-                        <p class="team-role">Cofounder</p>
-                        <p class="team-description">Senior Computer Science Undergraduate at UC San Diego</p>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="team-image">
-                        <img src="Images/BLEprint_Kiru.png" alt="Kiruthika Marikumaran">
-                    </div>
-                    <div class="team-info">
-                        <h3>Kiruthika Marikumaran</h3>
-                        <p class="team-role">Cofounder</p>
-                        <p class="team-description">Graduate student in Intelligent Systems, Robotics, and Control at UC San Diego</p>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="team-image">
-                        <img src="Images/BLEprint_Zarif.png" alt="Mustahsin Zarif">
-                    </div>
-                    <div class="team-info">
-                        <h3>Mustahsin Zarif</h3>
-                        <p class="team-role">Cofounder</p>
-                        <p class="team-description">Graduate Student</p>
+                <div class="page-hero-aside" data-reveal>
+                    <div class="page-hero-note">
+                        <span class="aside-label">Shared focus</span>
+                        <p>Safer work, stronger documentation, and a more modern on-site experience for hidden infrastructure decisions.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2 class="cta-title">Want to learn more about BLEprint?</h2>
-            <p class="cta-subtitle">Discover the problem we are solving and the vision behind the company.</p>
-            <a href="about.html" class="btn btn-primary btn-large">Learn About Us</a>
-        </div>
-    </section>
+        <section class="section-block">
+            <div class="container">
+                <p class="eyebrow center">Team BLEprint</p>
+                <h2 class="section-title">The builders behind the product vision</h2>
+                <div class="team-grid">
+                    <article class="team-member" data-reveal>
+                        <div class="team-frame">
+                            <div class="team-image">
+                                <img src="Images/BLEprint_Bray.jpg" alt="Brayan Aispuro">
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <span class="story-tag">Cofounder</span>
+                            <h3>Brayan Aispuro</h3>
+                            <p class="team-description">Senior Electrical Engineering undergraduate at UC San Diego.</p>
+                        </div>
+                    </article>
 
-    <!-- Footer -->
+                    <article class="team-member" data-reveal>
+                        <div class="team-frame">
+                            <div class="team-image">
+                                <img src="Images/BLEprint_Karim.jpg" alt="Karim Barajas">
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <span class="story-tag">Cofounder</span>
+                            <h3>Karim Barajas</h3>
+                            <p class="team-description">Senior Computer Science undergraduate at UC San Diego.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-member" data-reveal>
+                        <div class="team-frame">
+                            <div class="team-image">
+                                <img src="Images/BLEprint_Kiru.png" alt="Kiruthika Marikumaran">
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <span class="story-tag">Cofounder</span>
+                            <h3>Kiruthika Marikumaran</h3>
+                            <p class="team-description">Graduate student in Intelligent Systems, Robotics, and Control at UC San Diego.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-member" data-reveal>
+                        <div class="team-frame">
+                            <div class="team-image">
+                                <img src="Images/BLEprint_Zarif.png" alt="Mustahsin Zarif">
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <span class="story-tag">Cofounder</span>
+                            <h3>Mustahsin Zarif</h3>
+                            <p class="team-description">Graduate student focused on helping translate the product vision into execution.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta-shell" data-reveal>
+                <p class="eyebrow center">More context</p>
+                <h2 class="cta-title">See the problem BLEprint is solving and how the product is taking shape.</h2>
+                <p class="cta-subtitle">The About page walks through the problem, the insight, and the audience.</p>
+                <div class="cta-actions">
+                    <a href="about.html" class="btn btn-primary">Learn About BLEprint</a>
+                    <a href="index.html" class="btn btn-secondary">Return Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Focus Areas</h4>
-                    <ul>
-                        <li>Construction safety</li>
-                        <li>AR overlays</li>
-                        <li>Site documentation</li>
-                        <li>Utility strike prevention</li>
-                    </ul>
-                </div>
+        <div class="container footer-shell">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">BLEprint</a>
+                <p>
+                    A team working to make hidden infrastructure easier to understand before construction work turns risky.
+                </p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 BLEprint. All rights reserved.</p>
+            <div class="footer-nav-group">
+                <h4>Navigate</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
             </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span class="current-year">2026</span> BLEprint. All rights reserved.</p>
         </div>
     </footer>
 

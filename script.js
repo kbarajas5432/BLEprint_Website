@@ -1,117 +1,118 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const navbar = document.querySelector(".navbar");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+    const closeMenu = () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+    };
 
-// Close mobile menu when clicking on a nav link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+    hamburger.addEventListener("click", () => {
+        const isOpen = hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active", isOpen);
+        hamburger.setAttribute("aria-expanded", String(isOpen));
     });
-});
 
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+    navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+            closeMenu();
         }
-    });
-});
-
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
-});
-
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const message = contactForm.querySelector('textarea').value;
-        
-        // Here you would typically send the data to a server
-        // For now, we'll just show an alert
-        alert(`Thank you for your message, ${name}! We'll get back to you at ${email} soon.`);
-        
-        // Reset the form
-        contactForm.reset();
     });
 }
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+if (navbar) {
+    const syncNavbar = () => {
+        navbar.classList.toggle("scrolled", window.scrollY > 24);
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+    syncNavbar();
+    window.addEventListener("scroll", syncNavbar);
+}
 
-// Observe feature cards
-document.querySelectorAll('.feature-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-});
-
-// Add active state to navigation based on scroll position
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-menu a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Add CSS for active nav link
-const style = document.createElement('style');
-style.textContent = `
-    .nav-menu a.active {
-        color: var(--primary-color) !important;
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+document.querySelectorAll(".nav-menu a").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href === currentPage) {
+        link.classList.add("is-current");
     }
-`;
-document.head.appendChild(style);
+});
+
+document.querySelectorAll(".current-year").forEach((yearNode) => {
+    yearNode.textContent = String(new Date().getFullYear());
+});
+
+const revealItems = document.querySelectorAll("[data-reveal]");
+if (revealItems.length) {
+    const revealObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.18,
+            rootMargin: "0px 0px -40px 0px"
+        }
+    );
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+}
+
+document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector(".carousel-track");
+    const slides = Array.from(carousel.querySelectorAll(".carousel-card"));
+    const dotsWrap = carousel.querySelector("[data-carousel-dots]");
+    const prevButton = carousel.querySelector("[data-carousel-prev]");
+    const nextButton = carousel.querySelector("[data-carousel-next]");
+
+    if (!track || !slides.length || !dotsWrap || !prevButton || !nextButton) {
+        return;
+    }
+
+    let currentIndex = 0;
+
+    const renderDots = () => {
+        dotsWrap.innerHTML = "";
+        slides.forEach((_, index) => {
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.className = "carousel-dot";
+            dot.setAttribute("aria-label", `Go to card ${index + 1}`);
+            dot.classList.toggle("is-active", index === currentIndex);
+            dot.addEventListener("click", () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+            dotsWrap.appendChild(dot);
+        });
+    };
+
+    const updateCarousel = () => {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        Array.from(dotsWrap.children).forEach((dot, index) => {
+            dot.classList.toggle("is-active", index === currentIndex);
+        });
+    };
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+    });
+
+    renderDots();
+    updateCarousel();
+});

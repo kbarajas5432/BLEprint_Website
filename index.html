@@ -3,141 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLEprint - X-Ray-like Images for Construction Sites</title>
+    <title>BLEprint | 3D Jobsite Memory for Hidden Infrastructure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Navigation -->
+<body class="page page-home">
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">BLEprint</div>
+            <a href="index.html" class="logo">BLEprint</a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="team.html">Team</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">BLEprint</h1>
-            <p class="hero-subtitle">X-Ray-like images for construction sites</p>
-            <div class="hero-buttons">
-                <a href="about.html" class="btn btn-primary">Learn More</a>
-                <a href="team.html" class="btn btn-secondary">Meet Our Team</a>
-            </div>
-        </div>
-        <div class="hero-background"></div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content" data-reveal>
+                    <p class="eyebrow">Construction visibility reimagined</p>
+                    <h1 class="hero-title">Print a 3D memory of the wall before anyone cuts into it.</h1>
+                    <p class="hero-subtitle">
+                        BLEprint turns build-time progress photos into a precise, layered field reference so crews can understand what sits behind finished surfaces before drilling, cutting, or opening them up.
+                    </p>
+                    <div class="hero-stat-row">
+                        <div class="hero-stat">
+                            <span>Workflow</span>
+                            <strong>Capture. Index. Overlay.</strong>
+                        </div>
+                        <div class="hero-stat">
+                            <span>Approach</span>
+                            <strong>Software-first and mobile-ready</strong>
+                        </div>
+                        <div class="hero-stat">
+                            <span>Outcome</span>
+                            <strong>Fewer strikes and safer decisions</strong>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="about.html" class="btn btn-primary">See How It Works</a>
+                        <a href="team.html" class="btn btn-secondary">Meet the Team</a>
+                    </div>
+                </div>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Safer Construction Through Better Visibility</h2>
-            <p class="section-subtitle">
-                BLEprint helps construction teams see what is behind walls by turning build-time progress photos into an AR overlay for later use on site.
-            </p>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Accidents and utility strikes happen when workers do not know what is hidden behind walls. BLEprint is building a software-first solution that lets users upload progress photos during construction and later use those records to visualize hidden infrastructure before drilling, cutting, or renovating.
+                <div class="hero-visual" data-reveal>
+                    <div class="printer-scene">
+                        <div class="scene-glow"></div>
+                        <div class="printer-orbit orbit-one"></div>
+                        <div class="printer-orbit orbit-two"></div>
+                        <div class="printer-frame">
+                            <span class="frame-post post-left"></span>
+                            <span class="frame-post post-right"></span>
+                            <span class="frame-bar bar-top"></span>
+                            <span class="frame-bar bar-bottom"></span>
+                            <div class="printer-head">
+                                <span class="printer-nozzle"></span>
+                            </div>
+                            <div class="scan-plane"></div>
+                            <div class="printed-core">
+                                <span class="core-outline"></span>
+                            </div>
+                            <div class="print-bed"></div>
+                            <div class="printer-grid"></div>
+                        </div>
+                        <div class="hero-float-card card-top">
+                            <span class="float-label">Depth Map</span>
+                            <strong>Layer-by-layer wall memory</strong>
+                        </div>
+                        <div class="hero-float-card card-bottom">
+                            <span class="float-label">AR Ready</span>
+                            <strong>Built for on-site alignment</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="container insight-grid">
+                <div class="section-copy" data-reveal>
+                    <p class="eyebrow">What BLEprint changes</p>
+                    <h2 class="section-title section-title-left">From passive site photos to a usable field reference.</h2>
+                    <p class="section-subtitle section-subtitle-left">
+                        Construction teams already document progress. BLEprint is built to turn that documentation into a practical system for understanding hidden infrastructure later in the job lifecycle.
+                    </p>
+                    <a href="about.html" class="text-link">Learn the full story</a>
+                </div>
+                <div class="comparison-rail" data-reveal>
+                    <div class="comparison-row">
+                        <div class="comparison-label">Before BLEprint</div>
+                        <div class="comparison-copy">
+                            <h3>Photos sit in folders and context gets lost.</h3>
+                            <p>Crews return to finished walls with fragmented knowledge and limited confidence in what is hidden behind the surface.</p>
+                        </div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-label">With BLEprint</div>
+                        <div class="comparison-copy">
+                            <h3>The record stays tied to the wall, not buried in storage.</h3>
+                            <p>Images are organized by location and timing so teams can reference hidden systems with more confidence before the work starts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block section-dark">
+            <div class="container">
+                <p class="eyebrow center">Workflow</p>
+                <h2 class="section-title">How the experience comes together</h2>
+                <p class="section-subtitle">
+                    A jobsite-friendly flow designed around the way projects are already documented.
+                </p>
+                <div class="process-grid">
+                    <article class="process-step" data-reveal>
+                        <span class="process-number">01</span>
+                        <h3>Capture progress</h3>
+                        <p>Teams upload progress photos while framing, rough-in, and installation work is visible.</p>
+                    </article>
+                    <article class="process-step" data-reveal>
+                        <span class="process-number">02</span>
+                        <h3>Organize the wall history</h3>
+                        <p>BLEprint structures those images so they stay tied to place, sequence, and construction context.</p>
+                    </article>
+                    <article class="process-step" data-reveal>
+                        <span class="process-number">03</span>
+                        <h3>Overlay before action</h3>
+                        <p>When work returns to the wall later, teams can visualize what is likely hidden behind the finished surface.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="container feature-band">
+                <div class="feature-band-intro" data-reveal>
+                    <p class="eyebrow">Why it matters</p>
+                    <h2 class="section-title section-title-left">Built for the moments where uncertainty gets expensive.</h2>
+                    <p class="section-subtitle section-subtitle-left">
+                        BLEprint is designed to reduce the rework, downtime, and safety risk that come from not knowing what is behind the wall.
                     </p>
                 </div>
-            </div>
-            <div class="about-cta">
-                <a href="about.html" class="btn btn-primary">Learn More About Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Why BLEprint?</h2>
-            <p class="section-subtitle">Built to reduce costly mistakes, delays, and damage on construction sites</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🧱</div>
-                    <h3>See Behind Walls</h3>
-                    <p>Use progress photos captured during construction to create a visual reference of hidden infrastructure after walls are closed.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Software-First</h3>
-                    <p>No extra scanning hardware required. BLEprint is designed as a phone-based workflow that fits naturally into jobsite documentation.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚠️</div>
-                    <h3>Prevent Utility Strikes</h3>
-                    <p>Help teams avoid damaging pipes, wiring, and other hidden systems during drilling, cutting, and maintenance work.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏗️</div>
-                    <h3>Made for Construction Teams</h3>
-                    <p>Designed for contractors, specialty trades, safety managers, and project engineers who need safer site operations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Backers and Programs Section -->
-    <section class="backers-section">
-        <div class="container">
-            <h2 class="section-title">Backers and Programs</h2>
-            <p class="section-subtitle">The organizations that believe in our mission and support our journey</p>
-            <div class="backers-grid">
-                <div class="backer-card">
-                    <div class="backer-logo">
-                        <img src="Images/the_basement_uc_san_diego_logo.jpg" alt="UC San Diego The Basement - Blackstone LaunchPad">
+                <div class="feature-flow" data-reveal>
+                    <div class="feature-line">
+                        <span class="feature-kicker">01</span>
+                        <h3>See behind finished surfaces</h3>
+                        <p>Reference hidden utilities and systems using the project photos teams already collect.</p>
                     </div>
-                    <h3>UC San Diego The Basement - Blackstone LaunchPad</h3>
-                    <p>Home to Blackstone LaunchPad at UC San Diego - equipping students with entrepreneurial skills to build lasting careers through growth mindset, creativity, and leadership development.</p>
+                    <div class="feature-line">
+                        <span class="feature-kicker">02</span>
+                        <h3>Skip specialized hardware</h3>
+                        <p>A software-first workflow keeps the product accessible and easier to deploy across teams.</p>
+                    </div>
+                    <div class="feature-line">
+                        <span class="feature-kicker">03</span>
+                        <h3>Prevent strikes before they happen</h3>
+                        <p>Improve decision-making before drilling, cutting, fastening, or opening finished walls.</p>
+                    </div>
+                    <div class="feature-line">
+                        <span class="feature-kicker">04</span>
+                        <h3>Support leaders in the field</h3>
+                        <p>Give contractors, engineers, and safety teams clearer visibility when planning work.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2 class="cta-title">Want to learn more about BLEprint?</h2>
-            <p class="cta-subtitle">See the problem we are solving and the team building it.</p>
-            <a href="about.html" class="btn btn-primary btn-large">Explore BLEprint</a>
-        </div>
-    </section>
+        <section class="section-block">
+            <div class="container support-strip" data-reveal>
+                <div class="support-copy">
+                    <p class="eyebrow">Support</p>
+                    <h2 class="section-title section-title-left">Backed by programs that believe in the mission</h2>
+                    <p class="section-subtitle section-subtitle-left">
+                        BLEprint is growing with support from communities that help founders turn strong construction ideas into durable products.
+                    </p>
+                </div>
+                <article class="support-partner">
+                    <div class="support-logo">
+                        <img src="Images/the_basement_uc_san_diego_logo.jpg" alt="UC San Diego The Basement Blackstone LaunchPad">
+                    </div>
+                    <div class="support-text">
+                        <span class="support-tag">Launch support</span>
+                        <h3>UC San Diego The Basement - Blackstone LaunchPad</h3>
+                        <p>Supporting student founders with entrepreneurial training, community, and the momentum to turn promising ideas into lasting ventures.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <!-- Footer -->
+        <section class="cta">
+            <div class="container cta-shell" data-reveal>
+                <p class="eyebrow center">Next step</p>
+                <h2 class="cta-title">Explore the problem, the product direction, and the team behind BLEprint.</h2>
+                <p class="cta-subtitle">The story continues on the About page, with the team page close behind.</p>
+                <div class="cta-actions">
+                    <a href="about.html" class="btn btn-primary">Explore BLEprint</a>
+                    <a href="team.html" class="btn btn-secondary">Meet the Cofounders</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Our Team</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Focus Areas</h4>
-                    <ul>
-                        <li>Construction safety</li>
-                        <li>AR overlays</li>
-                        <li>Site documentation</li>
-                        <li>Utility strike prevention</li>
-                    </ul>
-                </div>
+        <div class="container footer-shell">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">BLEprint</a>
+                <p>
+                    A software-first platform for turning construction progress photos into safer, clearer jobsite decisions.
+                </p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 BLEprint. All rights reserved.</p>
+            <div class="footer-nav-group">
+                <h4>Navigate</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
             </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span class="current-year">2026</span> BLEprint. All rights reserved.</p>
         </div>
     </footer>
 
